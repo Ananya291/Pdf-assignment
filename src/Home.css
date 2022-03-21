@@ -28,6 +28,7 @@ input{
     border: 1px solid #d4d5d9;
     border-radius: 5px;
     width: 80%;
+    cursor: pointer;
 }
 
 input:hover{
@@ -41,7 +42,8 @@ input:hover{
     border-radius: 5px;
     font-size: 15px;
     font-weight: 600;
-    background-color: #E9DAC1;
+    background-color: #C85C5C;
+    cursor: pointer;
     color: white;
 }
 
@@ -55,10 +57,11 @@ input:hover{
     border: 1px solid #d4d5d9;
     border-radius: 5px;
     width: 40%;
-    background-color: #E9DAC1;
+    background-color: #C85C5C;
     color: white;
     font-size: 15px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .home_logout_button:hover{

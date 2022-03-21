@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "./firebase";
 import { PDFDocument } from "pdf-lib";
+import './Home.css'
 
 const Mainpage = () => {
   const [mergedPdfUrl, setMergedPdfUrl] = useState([]);
@@ -47,23 +48,23 @@ const Mainpage = () => {
   };
 
   return (
-    <div style={{ marginTop: 250 }}>
-      <center>
-        <input
-          onChange={(e) => onFilesChange(e)}
-          type="file"
-          name="upload"
-          accept="application/pdf"
-          multiple
-        />
-        <button onClick={() => mergePdfs(fileList)}>Merge</button>
-
-        <h3>Welcome{auth.currentUser.phoneNumber}</h3>
-        <button style={{ marginLeft: "20px" }} onClick={logout}>
-          Logout
-        </button>
-      </center>
-    </div>
+      <div className="home">
+        <center>
+          <h3 className="home_intro">Welcome {auth.currentUser.phoneNumber}</h3>
+          <input
+            onChange={(e) => onFilesChange(e)}
+            type="file"
+            name="upload"
+            accept="application/pdf"
+            multiple
+          />
+          <button className="home_button" onClick={() => mergePdfs(fileList)}>Merge</button>
+          <br></br>
+          <button className="home_logout_button" style={{ marginLeft: "20px" }} onClick={logout}>
+            Logout
+          </button>
+        </center>
+      </div>
   );
 };
 

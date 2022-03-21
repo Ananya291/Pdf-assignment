@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Login.css'
 import { firebase, auth } from './firebase';
 
 const Login = () => {
@@ -37,23 +38,26 @@ const Login = () => {
 	}
 
 	return (
-		<div style={{ "marginTop": "200px" }}>
-			<center>
+		<div classname='login' style={{ "marginTop": "200px" }}>
+			<div className='login-container'>
+			<center >
 				<div style={{ display: !show ? "block" : "none" }}>
-					<input value={mynumber} onChange={(e) => {
+					<h2 className='login-login'>Continue With Phone Number</h2>
+					<input className='login_phoneContainer' value={mynumber} onChange={(e) => {
 					setnumber(e.target.value) }}
 						placeholder="phone number" />
 					<br /><br />
 					<div id="recaptcha-container"></div>
-					<button onClick={signin}>Send OTP</button>
+					<button className='login_button' onClick={signin}>Send OTP</button>
 				</div>
 				<div style={{ display: show ? "block" : "none" }}>
-					<input type="text" placeholder={"Enter your OTP"}
+					<input className='login_button' type="text" placeholder={"Enter your OTP"}
 						onChange={(e) => { setotp(e.target.value) }}></input>
 					<br /><br />
-					<button onClick={ValidateOtp}>Verify</button>
+					<button className='login_button' onClick={ValidateOtp}>Verify</button>
 				</div>
 			</center>
+			</div>
 		</div>
 	);
 }
